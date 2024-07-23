@@ -1,0 +1,92 @@
+.bear {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: #8B4513; /* Color del oso */
+    border-radius: 50%;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+}
+
+.bear::before,
+.bear::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #8B4513;
+    border-radius: 50%;
+    z-index: -1;
+    border: 5px solid #654321; /* Borde para dar más definición */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra interna para darle profundidad */
+}
+
+.bear::before {
+    top: -20px;
+    left: 10px;
+}
+
+.bear::after {
+    top: -20px;
+    right: 10px;
+}
+
+
+.bear::before .inner-ear::before {
+    left: 10px;
+}
+
+.bear::after .inner-ear::after {
+    right: 10px;
+}
+
+.eye {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: 50px;
+}
+
+.eye.left {
+    left: 45px;
+}
+
+.eye.right {
+    right: 45px;
+}
+
+.eye::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+}
+
+.nose {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mouth {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background-color: transparent;
+    border-bottom: 3px solid #000;
+    border-radius: 0 0 50px 50px;
+    top: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+}
